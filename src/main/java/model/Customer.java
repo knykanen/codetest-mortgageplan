@@ -58,6 +58,6 @@ public class Customer {
      */
     public double getMonthlyPayment() {
         Formulas formulas = new Formulas();
-        return formulas.round(formulas.mortgageFormula(totalLoan, monthlyInterestDecimal, numberPayments));
+        return formulas.round(formulas.mortgageFormula(totalLoan, monthlyInterestDecimal, numberPayments), 2);
     }
 }
