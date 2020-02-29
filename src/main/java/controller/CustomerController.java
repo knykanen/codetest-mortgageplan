@@ -5,10 +5,8 @@ import view.CustomerView;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 
 public class CustomerController {
 
@@ -16,12 +14,12 @@ public class CustomerController {
 
     public void runApp() {
 
-        File file;
+        InputStream stream;
         try {
             // Fetch file with customers from resources folder
-            file = getCustomerFile("prospects.txt");
-            if (file.exists()) {
-                ArrayList<Customer> customers = parseContent(file);
+            stream = getCustomerFile("prospects.txt");
+            if (stream != null) {
+                ArrayList<Customer> customers = parseContent(stream);
                 view.printCustomers(customers);
             }
         } catch (FileNotFoundException e) {
@@ -34,34 +32,32 @@ public class CustomerController {
     }
 
     /***
-     * Gets a specified file from the resources folder and returns it
+     * Find prospect.txt file and return it as a stream
      * @param fileName Name of the file inside resources folder
-     * @return specified File if found
+     * @return InputStream of the file
      * @throws FileNotFoundException if the specified file is not found in the resource folder
      */
-    private File getCustomerFile(String fileName) throws FileNotFoundException {
+    private InputStream getCustomerFile(String fileName) throws FileNotFoundException {
         try {
-            return new File(
-                    Objects.requireNonNull(CustomerController.class.getClassLoader().getResource(fileName)).getFile()
-            );
+            return getClass().getClassLoader().getResourceAsStream("prospects.txt");
         } catch (NullPointerException e) {
             throw new FileNotFoundException();
         }
     }
 
     /***
-     * Parses the content of the specified file and adds all customers found into a ArrayList
+     * Parses the InputStream and adds all customers found into a ArrayList
      * which is returned. If input contains double quotes, check string inside quotes for comma (,) operator
      * and replace with empty space (continue if no comma operator). When input is corrected, replace with original line.
      *
-     * @param file Contains customer data to be parsed
+     * @param stream InputStream of customer data to be parsed
      * @return ArrayList of customers found inside the file
      * @throws IOException if unable to read file
      */
-    public ArrayList<Customer> parseContent(File file) throws IOException {
+    public ArrayList<Customer> parseContent(InputStream stream) throws IOException {
         ArrayList<Customer> customers = new ArrayList<>();
         String charset = "UTF-8";
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), charset));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream, charset));
         bufferedReader.readLine(); // Skip header line
         for (String line; (line = bufferedReader.readLine()) != null;) { // Starts from line two
             if (!line.isEmpty()) {
