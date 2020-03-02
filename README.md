@@ -9,7 +9,7 @@ Clone this repo.
 ### 2.
 Open up terminal and CD into the project folder where the Dockerfile and docker-compose.yml files are
 ### 3.
-Use the following command to compile the project  
+Use the following command to compile and build the project  
 `mvn clean package`
 ### 4.
 Use the following command to build the docker containers. **Notice the dot at the end**  
@@ -34,7 +34,7 @@ Clone this repo.
 Open the project in IntelliJ IDE and find the Maven tab in the right side of the IDE  
 ![Picture](https://i.imgur.com/VsMDNEw.png)
 ### 3.
-Press the `Clean` button and let it run. When it has finished, run `package`, which compiles the project. After the package is compiled, continue to step 4 in the previous installation guide.
+Press the `Clean` button and let it run. When it has finished, run `package`, which compiles and builds the project. After the package is compiled, continue to step 4 in the previous installation guide.
 
 ## TESTING
 Testing can be done with on the Maven tab in IntelliJ IDE by pressing `Test`. If you have Maven installed on your computer, you can run the command  
