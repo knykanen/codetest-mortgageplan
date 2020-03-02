@@ -1,6 +1,9 @@
 package controller;
 
 import model.Customer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import service.CustomerService;
 import view.CustomerView;
 
 import java.io.*;
@@ -8,9 +11,13 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Component
 public class CustomerController {
 
-    CustomerView view = new CustomerView();
+    @Autowired
+    CustomerView view;
+    @Autowired
+    CustomerService customerService;
 
     public void runApp() {
 
@@ -21,6 +28,10 @@ public class CustomerController {
             if (stream != null) {
                 ArrayList<Customer> customers = parseContent(stream);
                 view.printCustomers(customers);
+                for (Customer customer : customers) {
+                    System.out.println("Adding prospect " + customer.getName() + " to database");
+                    customerService.addCustomerToDatabase(customer);
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error: prospects.txt file not found. Exception: " + e.toString());

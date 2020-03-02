@@ -1,9 +1,11 @@
 package view;
 
 import model.Customer;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
+@Component
 public class CustomerView {
     /***
      * Prints out the result of each customer in the ArrayList

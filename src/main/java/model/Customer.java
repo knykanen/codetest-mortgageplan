@@ -2,13 +2,24 @@ package model;
 
 import math.Formulas;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name = "customer")
 public class Customer {
-    String name;
-    double totalLoan, annualInterestRate, monthlyInterestDecimal, numberPayments, years, monthlyInterestRate;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
+    String fullName;
+    double totalLoan, annualInterestRate, monthlyInterestDecimal, monthlyInterestRate, numberPayments, years;
 
+    public Customer() {
+    }
 
-    public Customer(String name, double totalLoan, double annualInterestRate, double years) {
-        this.name = name;
+    public Customer(String fullName, double totalLoan, double annualInterestRate, double years) {
+        this.fullName = fullName;
         this.totalLoan = totalLoan;
         this.annualInterestRate = annualInterestRate;
         this.years = years;
@@ -21,7 +32,7 @@ public class Customer {
      * @return Customer full name
      */
     public String getName() {
-        return name;
+        return fullName;
     }
 
     /***
