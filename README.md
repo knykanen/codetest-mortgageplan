@@ -2,7 +2,7 @@
 
 ## Getting Started
 This Project requires [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/) and [Maven](https://maven.apache.org/download.cgi) (requires setting up [enviroment variables](https://mkyong.com/maven/how-to-install-maven-in-windows/)). Maven is not required if an IDE such as IntelliJ is used (comes with Maven preinstalled).  
-Note: The project might have bugs if using Linux (different enviroment variables).
+Note: The project might have bugs if using Linux (different enviroment variables compared to Windows).
 
 ## Installing (with Maven installed on your computer)
 ### 1.
