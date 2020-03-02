@@ -23,7 +23,7 @@ The MySQL server is now running on port 3306 and the Spring application is runni
 When the applications are launched, a query will add all the customers from the text file (prospects.txt) into a database. These customers can be seen on  
 `localhost:8080/api/customers`
 ### 7.
-A simple web interface is also running on `localhost:8080` which will calculate the monthly payment with the given formula.
+A simple web interface is also running on `localhost:8080` which will calculate the monthly payment with the given formula. Note: Invalid input will most likely give errors, which is not recommended.
 ### 8.
 To stop the server press `ctrl + c` in the terminal. Additionally you can then type `docker-compose down` to completely stop the services.
 
