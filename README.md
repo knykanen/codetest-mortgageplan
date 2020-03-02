@@ -1,7 +1,7 @@
 # codetest-mortgageplan
 
 ## Getting Started
-This Project requires [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/) and [Maven](https://maven.apache.org/download.cgi) (requires setting up [enviroment variables](https://mkyong.com/maven/how-to-install-maven-in-windows/)). Maven is not required if using an IDE such as IntelliJ (comes with Maven preinstalled).
+This Project requires [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/) and [Maven](https://maven.apache.org/download.cgi) (requires setting up [enviroment variables](https://mkyong.com/maven/how-to-install-maven-in-windows/)). Maven is not required if an IDE such as IntelliJ is used (comes with Maven preinstalled).
 
 ## Installing (with Maven installed on your computer)
 ### 1.
@@ -34,7 +34,7 @@ Clone this repo.
 Open the project in IntelliJ IDE and find the Maven tab in the right side of the IDE  
 ![Picture](https://i.imgur.com/VsMDNEw.png)
 ### 3.
-Press the `Clean` button and let it run. When it has finished, run `package`, which compiles the project. After the package is compiled, continue on step 4 in the previous installation guide.
+Press the `Clean` button and let it run. When it has finished, run `package`, which compiles the project. After the package is compiled, continue to step 4 in the previous installation guide.
 
 ## TESTING
 Testing can be done with on the Maven tab in IntelliJ IDE by pressing `Test`. If you have Maven installed on your computer, you can run the command  
