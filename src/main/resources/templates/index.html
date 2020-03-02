@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Mortgage calculator</h1>
+<form action="#" th:action="@{/}" th:object="${webForm}" method="post">
+    <p>Total loan: <input type="text" id="totalLoan" name="totalLoan" th:field="*{totalLoan}" /></p>
+    <p>Interest: <input type="text" id="interest" name="interest" th:field="*{interest}" /></p>
+    <p>Years: <input type="text" id="years" name="years" th:field="*{years}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
+Answer:
+<p th:text="${webForm}"/>
+</body>
+</html>
