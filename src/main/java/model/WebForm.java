@@ -2,6 +2,10 @@ package model;
 
 import math.Formulas;
 
+/***
+ * Class for gathering data from web form
+ */
+
 public class WebForm {
     String totalLoan;
     String interest;
@@ -38,7 +42,6 @@ public class WebForm {
     @Override
     public String toString() {
         Formulas formulas = new Formulas();
-        System.out.println(totalLoan);
         if (totalLoan != null && interest != null && years != null) {
             return Double.toString(formulas.round(formulas.mortgageFormula(Double.parseDouble(totalLoan), (Double.parseDouble(interest) / 12 / 100), (Double.parseDouble(years) * 12)), 2));
         }
