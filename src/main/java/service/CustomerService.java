@@ -22,6 +22,10 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
+    /***
+     * Find all customers in MySQL database
+     * @return List of customers in database
+     */
     public List<Customer> findAll() {
         List<Customer> customers = new ArrayList<>();
         customerRepository.findAll().forEach(customers::add);
