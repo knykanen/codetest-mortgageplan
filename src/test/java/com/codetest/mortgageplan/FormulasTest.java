@@ -10,7 +10,8 @@ class FormulasTest {
 
 	@Test
 	void mortgageFormulaTest() {
-		System.out.println(formulas.mortgageFormula(1300.55, (7.13/12), 24));
+		// Check mortgage formula calculation
+		Assertions.assertEquals(1741.8806, formulas.mortgageFormula(4012, (5.21/12), 36), 0.1);
 		Assertions.assertEquals(772.75410, formulas.mortgageFormula(1300.55, (7.13/12), 24), 0.1);
 	}
 
