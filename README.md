@@ -15,7 +15,7 @@ Use the following command to compile and build the project
 ### 4.
 Use the following command to build the docker containers. **Notice the dot at the end**  
 `docker build -t mortgageplan .`  
-If this is your first time starting the service it will take some time to download all of the dependencies needed to run the server.
+If this is your first time starting the service it will take some time to download all of the dependencies needed to run the services.
 ### 5.
 Use the following command to start the containers.  
 `docker-compose up`  
