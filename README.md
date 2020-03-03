@@ -38,6 +38,6 @@ Open the project in IntelliJ IDE and find the Maven tab in the right side of the
 Press the `Clean` button and let it run. When it has finished, run `package`, which compiles and builds the project. After the package is compiled, continue to step 4 in the previous installation guide.
 
 ## TESTING
-Testing can be done with on the Maven tab in IntelliJ IDE by pressing `Test`. If you have Maven installed on your computer, you can run the command  
+Testing can be done on the Maven tab in IntelliJ IDE by pressing `Test`. If you have Maven installed on your computer, you can run the command  
 `mvn test`  
 in the terminal while inside the project folder.
